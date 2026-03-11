@@ -116,12 +116,15 @@ zakat/
 
 A sample Excel file is included at `samples/demo_portfolio.xlsx` to help you get started quickly.
 
-**Included demo data (2 family members):**
+**Included demo data (3 family members):**
 
-| Member | Assets |
-|--------|--------|
-| **Ahmed** | ETFs (VWCE.DE, ISAC.L), Stocks (MBG.DE, SAP.DE), Crypto (BTC, ETH), Gold (chain, coins, ring), Silver bars, Cash accounts, Liabilities |
-| **Fatima** | Gold jewelry (necklace, bangles, earrings, mahr set), Cash savings, Fixed deposit, Personal loan |
+| Member | Net Wealth | Zakat Due | Assets |
+|--------|-----------|-----------|--------|
+| **Siddiq** | €24,232 | €605.82 | ETFs, Stocks (AMZN, AAPL, NVDA, etc.), Crypto, Gold coins, Cash accounts, Liabilities |
+| **Zayyan** | €9,957 | €0 (below Nisab) | ETFs (Gold, Islamic World), Gold & Silver jewels |
+| **Fahima** | €104,354 | €2,608.85 | Gold ETF, Gold jewelry (750g), Silver jewels, Cash |
+
+**Combined family Zakat: €3,214.67**
 
 **To use:** Launch the app → click **↑ Import** → select `demo_portfolio.xlsx` → explore!
 
