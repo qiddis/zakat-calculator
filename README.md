@@ -6,6 +6,20 @@ A modern, feature-rich web application for calculating Islamic Zakat on assets. 
 ![Python](https://img.shields.io/badge/python-3.12+-blue.svg)
 ![Flask](https://img.shields.io/badge/flask-3.0+-green.svg)
 
+## 📸 Screenshots
+
+### Main Dashboard
+![Zakat Calculator Dashboard](.github/README_IMAGES/dashboard.png)
+*Portfolio overview with real-time asset prices and Zakat calculation*
+
+### Asset Management
+![Add Asset Dialog](.github/README_IMAGES/add-asset.png)
+*Easy-to-use interface for adding various asset types*
+
+### Export Features
+![Export Options](.github/README_IMAGES/export.png)
+*Export your portfolio to Excel or PDF format*
+
 ## ✨ Features
 
 ### 📊 Portfolio Management
@@ -201,10 +215,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 For issues, questions, or suggestions:
 - Open an issue on GitHub
 - Contact: [Your contact information]
-
-## 📊 Screenshot
-
-[Add screenshots of your application here]
 
 ---
 
