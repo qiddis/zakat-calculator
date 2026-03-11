@@ -107,10 +107,25 @@ zakat/
 │   ├── index.html       # Main application page
 │   ├── app.js           # Frontend logic
 │   └── styles.css       # Application styles
+├── samples/              # Demo files
+│   └── demo_portfolio.xlsx  # Sample portfolio for testing import
 └── README.md            # This file
 ```
 
-## 🔌 API Endpoints
+## � Demo Portfolio
+
+A sample Excel file is included at `samples/demo_portfolio.xlsx` to help you get started quickly.
+
+**Included demo data (2 family members):**
+
+| Member | Assets |
+|--------|--------|
+| **Ahmed** | ETFs (VWCE.DE, ISAC.L), Stocks (MBG.DE, SAP.DE), Crypto (BTC, ETH), Gold (chain, coins, ring), Silver bars, Cash accounts, Liabilities |
+| **Fatima** | Gold jewelry (necklace, bangles, earrings, mahr set), Cash savings, Fixed deposit, Personal loan |
+
+**To use:** Launch the app → click **↑ Import** → select `demo_portfolio.xlsx` → explore!
+
+## �🔌 API Endpoints
 
 ### Get Single Asset Price
 ```
