@@ -12,8 +12,9 @@ build-env/
 # PyInstaller
 build/
 dist/
-*.exe
 *.manifest
+# Keep the main executable in root
+!ZakatCalculator.exe
 
 # IDE
 .vscode/

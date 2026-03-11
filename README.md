@@ -30,11 +30,13 @@ A modern, feature-rich web application for calculating Islamic Zakat on assets. 
 
 ### Option 1: Run the Executable (Windows)
 
-1. Download `ZakatCalculator.exe`
+**Pre-built executable included in this repository!**
+
+1. Download or navigate to `ZakatCalculator.exe` (located in root directory)
 2. Double-click to run
 3. Browser automatically opens to http://localhost:3000
 
-**That's it!** No installation required.
+**That's it!** No Python installation or dependencies required. The executable (~17 MB) includes everything needed.
 
 ### Option 2: Run from Source
 
@@ -83,6 +85,7 @@ The executable includes:
 
 ```
 zakat/
+├── ZakatCalculator.exe    # ⭐ Ready-to-run Windows executable
 ├── server.py              # Flask backend server
 ├── requirements.txt       # Python dependencies
 ├── zakat.spec            # PyInstaller configuration
@@ -90,7 +93,6 @@ zakat/
 │   ├── index.html       # Main application page
 │   ├── app.js           # Frontend logic
 │   └── styles.css       # Application styles
-├── dist/                # Built executable (after build)
 └── README.md            # This file
 ```
 
