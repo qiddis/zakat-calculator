@@ -125,6 +125,14 @@ async function fetchMetalPrices() {
   return res.json();
 }
 
+async function fetchExchangeRate(fromCurrency, toCurrency) {
+  if (fromCurrency === toCurrency) return 1.0;
+  const res = await fetch(`/api/exchange-rate/${encodeURIComponent(fromCurrency)}/${encodeURIComponent(toCurrency)}`);
+  if (!res.ok) throw new Error(`Failed to fetch exchange rate ${fromCurrency} -> ${toCurrency}`);
+  const data = await res.json();
+  return data.rate;
+}
+
 // ========================================
 // Utility
 // ========================================
@@ -1649,10 +1657,55 @@ function initEventListeners() {
   });
 
   // Settings changes
-  document.getElementById('currencySelect').addEventListener('change', (e) => {
-    state.settings.currency = e.target.value;
-    saveState();
-    renderAll();
+  document.getElementById('currencySelect').addEventListener('change', async (e) => {
+    const newCurrency = e.target.value;
+    const oldCurrency = state.settings.currency;
+    if (newCurrency === oldCurrency) return;
+
+    try {
+      showToast(`Converting values from ${oldCurrency} to ${newCurrency}...`, 'info');
+      const rate = await fetchExchangeRate(oldCurrency, newCurrency);
+
+      // Convert manually entered values for all members
+      state.members.forEach(member => {
+        // Cash amounts
+        (member.portfolio.cash || []).forEach(item => {
+          item.amount = item.amount * rate;
+        });
+        // Liabilities
+        (member.portfolio.liabilities || []).forEach(item => {
+          item.amount = item.amount * rate;
+        });
+        // Physical gold: buy prices and manual current prices
+        (member.portfolio.gold || []).forEach(item => {
+          if (item.buyPricePerGram) item.buyPricePerGram = item.buyPricePerGram * rate;
+          if (item.manualPrice) item.pricePerGram = item.pricePerGram * rate;
+        });
+        // Physical silver: buy prices and manual current prices
+        (member.portfolio.silver || []).forEach(item => {
+          if (item.buyPricePerGram) item.buyPricePerGram = item.buyPricePerGram * rate;
+          if (item.manualPrice) item.pricePerGram = item.pricePerGram * rate;
+        });
+        // ETFs/Stocks/Crypto: convert avg purchase prices
+        ['etfs', 'stocks', 'crypto'].forEach(type => {
+          (member.portfolio[type] || []).forEach(item => {
+            if (item.avgPrice) item.avgPrice = item.avgPrice * rate;
+          });
+        });
+      });
+
+      state.settings.currency = newCurrency;
+      saveState();
+
+      // Re-fetch live prices in the new currency
+      await updateAllPrices();
+      showToast(`Converted to ${newCurrency} successfully!`, 'success');
+    } catch (err) {
+      console.error('Currency conversion error:', err);
+      showToast('Currency conversion failed: ' + err.message, 'error');
+      // Revert the dropdown
+      e.target.value = oldCurrency;
+    }
   });
 
   document.getElementById('nisabMethod').addEventListener('change', (e) => {
