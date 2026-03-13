@@ -120,9 +120,9 @@ A sample Excel file is included at `samples/demo_portfolio.xlsx` to help you get
 
 | Member | Net Wealth | Zakat Due | Assets |
 |--------|-----------|-----------|--------|
-| **Father** | €24,232 | €605.82 | ETFs, Stocks (AMZN, AAPL, NVDA, etc.), Crypto, Gold coins, Cash accounts, Liabilities |
+| **Father** | €19,804 | €695 | ETFs, Stocks (AMZN, AAPL, NVDA, etc.), Crypto, Gold coins, Cash accounts, Liabilities |
 | **Son** | €9,957 | €0 (below Nisab) | ETFs (Gold, Islamic World), Gold & Silver jewels |
-| **Mother** | €104,354 | €2,608.85 | Gold ETF, Gold jewelry (750g), Silver jewels, Cash |
+| **Mother** | €37,464.74 | €936.62 | Gold ETF, Gold jewelry (750g), Silver jewels, Cash |
 
 **Combined family Zakat: €3,214.67**
 
